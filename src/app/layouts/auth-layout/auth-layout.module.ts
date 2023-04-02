@@ -6,7 +6,12 @@ import { AuthLayoutRoutes } from './auth-layout.routing';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { LoginComponent } from '../../pages/login/login.component';
-import { RegisterComponent } from '../../pages/register/register.component';
+import { RegisterComponentFaculty } from '../../pages/registerFaculty/registerFaculty.component';
+import { RegisterComponentOptions  } from '../../pages/registerOptions/registerOptions.component';
+import { RegisterComponentCapstoneG} from '../../pages/registerCapstoneG/registerFaculty.component';
+import { AdminResetPass} from '../../pages/AdminResetPass/AdminResetPass.component';
+
+
 @NgModule({
   imports: [
     CommonModule,
@@ -16,7 +21,11 @@ import { RegisterComponent } from '../../pages/register/register.component';
   ],
   declarations: [
     LoginComponent,
-    RegisterComponent
+    RegisterComponentFaculty,
+    RegisterComponentOptions ,
+    RegisterComponentCapstoneG ,
+    AdminResetPass
+ 
   ]
 })
 export class AuthLayoutModule { }

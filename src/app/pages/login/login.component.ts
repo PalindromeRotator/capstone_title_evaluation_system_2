@@ -1,4 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-login',
@@ -12,5 +14,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
   ngOnDestroy() {
   }
+
 
 }
