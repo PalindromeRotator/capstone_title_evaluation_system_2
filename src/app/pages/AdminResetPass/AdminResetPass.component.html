@@ -66,39 +66,28 @@
               </div>
             </div>
 
+
             <div class="text-center">
               <button class="RegisterButton" role="button" (click)="openPopup()" > Change Password</button>
             </div>
 
 
+           <div class="modal" id="myModal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h3 class="modal-title">Your password has been updated</h3>
+                          <button type="button" class="close" data-dismiss="modal" (click)="closePopup()">&times;</button>                        
+                        </div>
+                        <!-- <div class="modal-body">
+                          <p>Some text in the modal.</p>
+                        </div> -->
+                      </div>
+                    </div>
+                </div>  
+                
 
-            <div class="modal" id="modalPush" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <!--Content-->
-              <div class="modal-content text-center">
-                <!--Header-->
-                <div class="modal-header d-flex justify-content-center">
-                  <p class="heading">Password Reset</p>
-                </div>
-          
-                <!--Body-->
-                <div class="modal-body">
-          
-                  <!-- <i class="fas fa-bell fa-4x animated rotateIn mb-4"></i> -->
-          
-                  <p>Password has been changed</p>
-          
-                </div>
-          
-                <!--Footer-->
-                <div class="modal-footer flex-center">
-                  <a type="button" class="btn btn-danger" data-dismiss="modal" (click)="closePopup()">Close</a>
-                </div>
-              </div>
-              <!--/.Content-->
-            </div>
-          </div>
           </form>
         </div>
       </div>
