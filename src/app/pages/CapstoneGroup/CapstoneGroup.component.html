@@ -1,0 +1,234 @@
+<div class="header bg-gradient-warning pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <button class="AddGroup" role="button">Add Group</button>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Name of the Capstone Project</th>
+                <th scope="col">Section</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <div class="media align-items-center">                   
+                    <div class="media-body">
+                      <div class="input-group flex-nowrap">                       
+                        <input type="text" class="form-control" placeholder="Enter the name of your Capstone Project" aria-label="Capstone Project" aria-describedby="addon-wrapping">
+                      </div>
+                    </div>
+                  </div>
+                </th>              
+                <td>
+                  <div class="input-group flex-nowrap">                       
+                    <input type="text" class="form-control" placeholder="Section" aria-label="Capstone Project" aria-describedby="addon-wrapping">
+                  </div>
+                </td>
+                <td>
+                  <button type="button"  class="btn btn-primary" [routerLink]="['/capstonegroupview']">View</button>
+                  <button type="button"  class="btn btn-danger" >Remove</button>
+                </td> 
+               </tr>
+               <td><button class="AddGrade" role="button" (click)="openPopup()">See Grade</button></td>
+                <td></td>
+                <!-- <td align="right">          
+                <button class="save" role="button">Upload</button>
+                <button class="edit" role="button">Edit</button>   
+                </td>   -->
+            </tbody>
+          </table>
+
+          <div class="modal" id="myModal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title">GRADE</h3>
+              <button type="button" class="close" data-dismiss="modal" (click)="closePopup()">&times;</button>                        
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Is the capstone project topic presented...</th>                       
+                    <th scope="col">T1</th>
+                    <th scope="col">T2</th>
+                    <th scope="col">T3</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>
+                      Relevant to the current societal  or technological trends of today's generation?
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <th scope="row">2</th>   
+                    <td>
+                      Has clearly stated the problem to be s  olved/compelling reasons for the study as evidence of stakeholder  consultation?
+                    </td>                
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <th scope="row">3</th> 
+                    <td>
+                      Has a concise understanding of how these issues can be solved?
+                    </td>                   
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <th scope="row">4</th>  
+                    <td>
+                      Has impact and can be published in a referred journal?
+                    </td>                    
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <th scope="row">5</th> 
+                    <td>
+                      Followed the standard number of words used for its research title, typically 10-12 words long?
+                    </td>                  
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                  </tr>
+
+
+                  <tr>
+                    <th scope="row">6</th>  
+                    <td>
+                      Congruent to the nature  of the discipline/courses enrolled?
+                    </td>                                       
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                    <td>
+                      <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          </div>
+          </div>  
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+

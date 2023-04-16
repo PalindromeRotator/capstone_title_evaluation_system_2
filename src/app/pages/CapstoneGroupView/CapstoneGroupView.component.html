@@ -1,0 +1,119 @@
+<div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 100px; background-size: cover; background-position: center top;">
+  <!-- Mask -->
+  <span class="mask bg-gradient-warning opacity-8"></span>
+  <!-- Header container -->
+</div>
+<div class="container-fluid mt--7">
+  <div class="row">
+    <div class="col-xl-12 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">Capstone Group View</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">Capstone Name</label>
+                    <input type="text" id="inputUsername" class="form-control form-control-alternative" placeholder="Enter your FullName" value="James Philip Villanueva">
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Capstone File Name</label>
+                    <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your Email Address" value="James@gmail.com">
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Section</label>
+                    <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your Email Address" value="James@gmail.com">
+                  </div>
+                </div>
+              </div>
+
+            <!-- CAPSTONE GROUP OTHER DETAILS -->
+              <div class="row"> 
+                <div class="col-xl-3 col-lg-6">
+                  <div class="card card-stats mb-4 mb-xl-0">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <span class="h2 font-weight-bold mb-0">FILE NAME HERE</span>
+                        </div>
+                        <div class="mb-2">
+                          <input class="form-control" type="file" id="formFile">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+
+              <div class="row">
+                  <div class="col-lg-4">
+                   <div class="form-group">
+                    <button class="btn btn-info" >Download File</button>
+                  </div>
+                  </div>  
+
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                     
+                   </div>
+                   </div>  
+
+                   <div class="col-lg-4" align="right">
+                    <div class="form-group">
+                     <button class="btn btn-success" (click)="openPopup()">Save</button>
+                   </div>
+                   </div>                   
+              </div>
+
+
+
+                <div class="modal" id="myModal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h3 class="modal-title">Saved</h3>
+                          <button type="button" class="close" data-dismiss="modal" (click)="closePopup()">&times;</button>                        
+                        </div>
+                        <!-- <div class="modal-body">
+                          <p>Some text in the modal.</p>
+                        </div> -->
+                      </div>
+                    </div>
+                </div>                
+              </div>     
+          </form>
+        </div>
+      </div>
+    </div>   
+</div>
+
+<div class="col-md-10 col-lg-8 col-xl-6">              
+  <div class="card" style="width: 1000px; height: 400px;">
+    <div class="card-body p-4 overflow-auto">
+      <h4 class="mb-0">Recent comments</h4>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      S Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lS Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l
+      S Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      S Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lS Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l
+      S Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l     
+  </div>
+</div>
+</div>  
+
+
+  

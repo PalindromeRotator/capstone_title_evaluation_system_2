@@ -1,0 +1,141 @@
+.btn{
+  width: 45%;
+}
+td[align="right"] {
+  text-align: right;
+}
+/* CSS */
+.save{
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #199700;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 25%;
+}
+
+.save:hover,
+.save:focus {
+  background-color: #07ca00;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.save:hover {
+  transform: translateY(-1px);
+}
+
+.save:active {
+  background-color: #64ff79;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+
+.edit{
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #00b2d1;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 25%;
+}
+
+.edit:hover,
+.edit:focus {
+  background-color: #008db8;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.edit:hover {
+  transform: translateY(-1px);
+}
+
+.edit:active {
+  background-color: #78ebff;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+
+.AddGrade{
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #eb6d19;
+  border: 1px solid transparent;
+  border-radius: .25rem;
+  box-shadow: rgba(255, 169, 56, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: 40%;
+}
+.AddGrade:hover,
+.AddGrade:focus {
+  background-color: #ce5c11;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+.AddGrade:hover {
+  transform: translateY(-1px);
+}
+
+.AddGrade:active {
+  background-color: #eb9431;
+  box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+  transform: translateY(0);
+}
+

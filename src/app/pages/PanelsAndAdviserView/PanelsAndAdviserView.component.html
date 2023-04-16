@@ -1,0 +1,151 @@
+<div class="header bg-gradient-warning pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">  
+    <div class="col-xl-12 order-xl-1">
+      <div class="card bg-secondary shadow">
+        <div class="card-header bg-white border-0">
+          <div class="row align-items-center">
+            <div class="col-8">
+              <h3 class="mb-0">Panels and Adviser View</h3>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form>
+            <div class="pl-lg-4">
+              <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">Capstone Name</label>
+                   <h4>Capstone Name</h4>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Capstone File Name</label>
+                    <h4>File Name</h4>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Section</label>
+                    <h4>Section</h4>
+                  </div>
+                </div>
+              </div>
+
+            <!-- CAPSTONE GROUP OTHER DETAILS -->
+              <div class="row"> 
+                <div class="col-xl-3 col-lg-6">
+                  <div class="card card-stats mb-4 mb-xl-0">
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col">
+                          <span class="h2 font-weight-bold mb-0">FILE NAME HERE</span>
+                        </div>
+                        <div class="col-auto">
+                          <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                            <i class="ni ni-cloud-download-95"></i>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </div>
+
+              <div class="row">
+                  <div class="col-lg-4">
+                   <div class="form-group">
+                    <button class="btn btn-info" >Download File</button>
+                  </div>
+                  </div>  
+
+                  <div class="col-lg-4">
+                    <div class="form-group">
+                     
+                   </div>
+                   </div>  
+
+                   <div class="col-lg-4" align="right">
+                    <div class="form-group">
+                     <button class="btn btn-success" (click)="openPopup()">Save</button>
+                   </div>
+                   </div>                   
+              </div>
+
+
+
+                <div class="modal" id="myModal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}" aria-labelledby="exampleModalLabel"
+                      aria-hidden="true">
+                      <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h3 class="modal-title">Saved</h3>
+                          <button type="button" class="close" data-dismiss="modal" (click)="closePopup()">&times;</button>                        
+                        </div>
+                        <!-- <div class="modal-body">
+                          <p>Some text in the modal.</p>
+                        </div> -->
+                      </div>
+                    </div>
+                </div>                
+              </div>     
+          </form>
+        </div>
+      </div>
+    </div>   
+</div>
+
+  <div class="col-xl-12 order-xl-1">
+    
+    <div class="row d-flex justify-content">
+    
+      <div class="col-md-10 col-lg-8 col-xl-6">
+        
+        <div class="card"style="width: 700px; height: 250px;">
+          <div class="card-body p-4">
+            <div class="d-flex flex-start w-100">
+              <div class="w-100">
+                <h4>Add a comment</h4>
+                <div class="form-outline">
+                  <textarea class="form-control" id="textAreaExample" rows="4"></textarea>
+                </div>
+                <div class="d-flex justify-content-between mt-3">
+                  <button type="button" class="btn btn-warning"> Send <i class="fas fa-long-arrow-alt-right ms-1"></i> </button>
+                </div>
+              </div>
+            </div>
+          </div>          
+        </div>
+      </div>
+
+        
+      <div class="col-md-10 col-lg-8 col-xl-6">              
+        <div class="card">
+          <div class="card-body p-4 overflow-auto">
+            <h4 class="mb-0">Recent comments</h4>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            S Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lS Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l
+            S Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut l
+        </div>
+      </div>
+    </div>         
+</div>
+
+
+
+
+
+
+
+

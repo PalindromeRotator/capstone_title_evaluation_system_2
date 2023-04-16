@@ -11,10 +11,12 @@ export const ROUTES: RouteInfo[] = [
     { path: '/user-profile', title: 'Profile',  icon:'ni-single-02 text-yellow', class: '' },
     { path: '/tables', title: 'AM Admin',  icon:'ni-bullet-list-67 text-red', class: '' },
     { path: '/dashboard', title: 'Admin Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
-    { path: '/maps', title: 'CapstoneGroup',  icon:'ni-pin-3 text-orange', class: '' },
+    { path: '/capstoneGroup', title: 'CapstoneGroup',  icon:'ni-pin-3 text-orange', class: '' },
+    { path: '/panelsandadviser', title: 'Panels and Adviser',  icon:'ni-circle-08 text-pink', class: '' },
     { path: '/icons', title: 'Working',  icon:'ni-planet text-blue', class: '' },
     { path: '/login', title: 'Login',  icon:'ni-key-25 text-info', class: '' },
     { path: '/registerOptions', title: 'Register',  icon:'ni-circle-08 text-pink', class: '' }
+    
 ];
 
 @Component({
