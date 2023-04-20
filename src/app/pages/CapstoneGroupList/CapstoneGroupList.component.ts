@@ -11,5 +11,14 @@ export class CapstoneGroupList implements OnInit {
 
   ngOnInit() {
   }
+  
+  displayStyle = "none";
+  
+  openPopup() {
+    this.displayStyle = "block";
+  }
+  closePopup() {
+    this.displayStyle = "none";
+  }
 
 }
