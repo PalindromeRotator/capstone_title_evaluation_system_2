@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { tables } from './tables.component';
+import { CapstoneGroupList } from './CapstoneGroupList.component';
 
-describe('tables', () => {
-  let component: tables;
-  let fixture: ComponentFixture<tables>;
+describe('CapstoneGroupList', () => {
+  let component: CapstoneGroupList;
+  let fixture: ComponentFixture<CapstoneGroupList>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ tables ]
+      declarations: [ CapstoneGroupList ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(tables);
+    fixture = TestBed.createComponent(CapstoneGroupList);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

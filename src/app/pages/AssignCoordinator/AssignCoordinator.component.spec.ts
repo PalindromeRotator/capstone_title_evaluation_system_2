@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { tables } from './tables.component';
+import { AssignCoordinator } from './AssignCoordinator.component';
 
-describe('tables', () => {
-  let component: tables;
-  let fixture: ComponentFixture<tables>;
+describe('AssignCoordinator', () => {
+  let component: AssignCoordinator;
+  let fixture: ComponentFixture<AssignCoordinator>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ tables ]
+      declarations: [ AssignCoordinator ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(tables);
+    fixture = TestBed.createComponent(AssignCoordinator);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

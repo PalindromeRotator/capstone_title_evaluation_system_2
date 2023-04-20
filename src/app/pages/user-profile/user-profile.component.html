@@ -5,6 +5,9 @@
 </div>
 <div class="container-fluid mt--7">
   <div class="row">
+
+
+
     <div class="col-xl-3 order-xl-2 mb-5 mb-xl-0">
       <div class="card card-profile shadow">
         <div class="row justify-content-center">
@@ -20,35 +23,50 @@
         </div>
         <div class="card-body pt-0 pt-md-4">
         <br><br>
-          <!-- <div class="row">
-            <div class="col">
-              <div class="card-profile-stats d-flex justify-content-center mt-md-5">
-                <div>
-                  <span class="heading"></span>
-                  <span class="description"></span>
-                </div>
-                <div>
-                  <span class="heading"></span>
-                  <span class="description"></span>
-                </div>
-                <div>
-                  <span class="heading"></span>
-                  <span class="description"></span>
-                </div>
-              </div>
-            </div>
-          </div> -->
           <hr class="my-4" />
           <div class="text-center">
             <h2>
-              James Philip Villanueva<span class="font-weight-light"></span>
+              Capstone Group Name Here<span class="font-weight-light"></span>
             </h2>
           </div>
           <hr class="my-4" />
 
+          <!-- Members -->
+
+          <div class="row bootstrap snippets bootdeys">
+            <div class="col-md-12 container-widget">
+                <div class="panel panel-info panel-widget">
+                    <div class="panel-title text-center">
+                      Team Members
+                    </div>
+                    <div class="panel-body">
+
+                      <ul class="basic-list image-list" >
+                        <li (click)="openPopup()"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="img" class="img"><b>John Doe</b><span class="desc">Designer</span></li>
+                        <li (click)="openPopup()"><img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="img" class="img"><b>Sarah Smith </b><span class="desc">Front-End Developer</span></li>
+                        <li (click)="openPopup()"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" alt="img" class="img"><b>Stephen Doe</b><span class="desc">Back-End Developer</span></li>
+                        <li (click)="openPopup()"><img src="https://bootdey.com/img/Content/avatar/avatar4.png" alt="img" class="img"><b>Kendra Hall</b><span class="desc">Marketing</span></li>
+                        <li (click)="openPopup()"><img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="img" class="img"><b>Mark Doe</b><span class="desc">iOS Developer</span></li>
+                        <li (click)="openPopup()"><img src="https://bootdey.com/img/Content/avatar/avatar5.png" alt="img" class="img"><b>Mark Doe</b><span class="desc">iOS Developer</span></li>
+                        <div class="col-lg-7">
+                        </div>  
+                      </ul>
+
+                    </div>
+                </div>
+                <div class="form-group">                  
+                  <button class="btn btn-info" style="width: 200px;" (click)="openPopup()">Add Member</button>                 
+                </div>
+            </div>      
+        </div>
         </div>
       </div>
+
+
     </div>
+
+
+
     <div class="col-xl-9 order-xl-1">
       <div class="card bg-secondary shadow">
         <div class="card-header bg-white border-0">
@@ -63,24 +81,85 @@
             <h6 class="heading-small text-muted mb-4">User information</h6>
             <div class="pl-lg-3">
               <div class="row">
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">Group Number</label>
+                    <input type="text" id="inputUsername" class="form-control form-control-alternative" placeholder="Enter your Group Number" value="">
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Capstone Name</label>
+                    <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your Capstone Name" value="">
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Email</label>
+                    <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your Email Address" value="">
+                  </div>
+                </div>            
+              </div>
+
+              <div class="row">
+                <div class="col-lg-5">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-username">Password</label>
+                    <input type="text" id="inputUsername" class="form-control form-control-alternative" placeholder="Enter your Password" type="password" value="">
+                  </div>
+                </div>
+                <div class="col-lg-5">
+                  <div class="form-group">
+                    <label class="form-control-label" for="input-email">Confirm Password</label>
+                    <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Confirm Password" type="password" value="">
+                  </div>
+                </div>          
+              </div>
+              <hr>
+              <div class="form-group">                  
+                <button class="btn btn-info" style="width: 200px;">Update</button>                 
+              </div>
+            <!-- CAPSTONE GROUP OTHER DETAILS -->
+
+            
+            
+            <div class="row">        
+              <div class="modal" id="myModal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4>Member</h4>
+                  <button type="button" class="close" data-dismiss="modal" (click)="closePopup()">&times;</button>                        
+                </div>
+                <div class="modal-body">
+
+
+
+                 <div class="card-body">
+          <form>
+            <h6 class="heading-small text-muted mb-4">User information</h6>
+            <div class="pl-lg-3">
+              <div class="row">
                 <div class="col-lg-3">
                   <div class="form-group">
                     <label class="form-control-label" for="input-username">First Name</label>
-                    <input type="text" id="inputUsername" class="form-control form-control-alternative" placeholder="Enter your FullName" value="">
+                    <input type="text" id="inputUsername" class="form-control form-control-alternative" placeholder="Enter your First Name" value="">
                   </div>
                 </div>
                 <div class="col-lg-3">
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Middle Name</label>
-                    <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your Email Address" value="">
+                    <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your Middle Name" value="">
                   </div>
                 </div>
                 <div class="col-lg-3">
                   <div class="form-group">
                     <label class="form-control-label" for="input-email">Last Name</label>
-                    <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your Email Address" value="">
+                    <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your Last Name" value="">
                   </div>
                 </div>
+                
                 <div class="col-md-3 mb-4">
                   <h4 class="mb-2 pb-1">Gender: </h4>
                   <div class="form-check form-check-inline">
@@ -200,29 +279,9 @@
 
                   <div class="col-lg-7">
                    <div class="form-group">
-                  <button class="btn btn-info" (click)="openPopup()">Edit Profile</button>
+                  <button class="btn btn-info" >Update</button>                  
                   </div>
-                </div>  
-                
-              
-
-                <div class="modal" id="myModal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}" aria-labelledby="exampleModalLabel"
-                      aria-hidden="true">
-                      <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h3 class="modal-title">Your account has been updated</h3>
-                          <button type="button" class="close" data-dismiss="modal" (click)="closePopup()">&times;</button>                        
-                        </div>
-                        <!-- <div class="modal-body">
-                          <p>Some text in the modal.</p>
-                        </div> -->
-                      </div>
-                    </div>
-                </div>  
-                
-                
-                
+                </div>                 
               </div>
             </div>         
           </form>

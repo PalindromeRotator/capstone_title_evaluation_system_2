@@ -1,0 +1,198 @@
+<div class="header bg-gradient-warning pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div  class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <div class="b1">
+          <button type="button"  class="btn btn-success" (click)="openPopup()">Add Panels</button>
+        </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Name of the Capstone Project</th>
+                <th scope="col">Section</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <div class="media align-items-center">                   
+                    <div class="media-body">
+                      <div class="input-group flex-nowrap">                       
+                        Capstone Name #1
+                      </div>
+                    </div>
+                  </div>
+                </th>              
+                <td>
+                  <div class="input-group flex-nowrap">                       
+                    Section
+                  </div>
+                </td>
+                <td>
+                </td> 
+               </tr>              
+            </tbody>
+          </table>
+
+          <div class="modal" id="myModal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4>Add Panels and Advisor</h4>
+              <button type="button" class="close" data-dismiss="modal" (click)="closePopup()">&times;</button>                        
+            </div>
+            <div class="modal-body">
+
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="circle-08"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Adviser" type="name">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group input-group-alternative mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="circle-08"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Panel 1" type="Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="circle-08"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Panel 2" type="Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group input-group-alternative">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="circle-08"></i></span>
+                  </div>
+                  <input class="form-control" placeholder="Panel 3" type="Name">
+                </div>
+              </div>
+              <div class="b1">
+              <button type="button" class="btn btn-success" (click)="closePopup()">Save</button>
+            </div>
+            </div>
+          </div>
+          </div>
+          </div>  
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header border-0">
+          <div class="b1">
+          <h4>Panels</h4>
+        </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table align-items-center table-flush">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">Name of the Panel</th>
+                <th scope="col">Expertise</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">
+                  <div class="media align-items-center">                   
+                    <div class="media-body">
+                      <div class="input-group flex-nowrap">                       
+                        Panel Name #1
+                      </div>
+                    </div>
+                  </div>
+                </th>  
+                            
+                <td>
+                  <div class="input-group flex-nowrap">                       
+                    Expertise
+                  </div>
+                </td>
+                <td>
+                </td> 
+                
+               </tr>     
+               
+               <tr>
+                <th scope="row">
+                  <div class="media align-items-center">                   
+                    <div class="media-body">
+                      <div class="input-group flex-nowrap">                       
+                        Panel Name #2
+                      </div>
+                    </div>
+                  </div>
+                </th>  
+                            
+                <td>
+                  <div class="input-group flex-nowrap">                       
+                    Expertise
+                  </div>
+                </td>
+                <td>
+                </td> 
+                
+               </tr> 
+
+               <tr>
+                <th scope="row">
+                  <div class="media align-items-center">                   
+                    <div class="media-body">
+                      <div class="input-group flex-nowrap">                       
+                        Panel Name #3
+                      </div>
+                    </div>
+                  </div>
+                </th>  
+                            
+                <td>
+                  <div class="input-group flex-nowrap">                       
+                    Expertise
+                  </div>
+                </td>
+                <td>
+                </td> 
+                
+               </tr> 
+            </tbody>
+          </table>       
+        </div>
+      </div>
+    </div>
+
+   
+  </div>
+</div>
+
+
+
+
+
+

@@ -12,42 +12,34 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header border-0">
-          
-         <div class="search">
-          <div class="input-group">
-            <input type="search" class="form-control rounded" placeholder="Search Expertise" aria-label="Search" aria-describedby="search-addon" />
-            <button type="button" class="btn btn-outline-primary">search</button>
-          </div>
-        </div>
-                <br>
-          <div>
-            <button type="button" class="btn btn-primary" [routerLink]="['/assigncoordinator']">Assign Coordinator</button>
-          </div>                  
+          <h4>Capstone Group List</h4>
+          <br>                 
         </div>
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Expertise</th>
-                <th scope="col">Status</th>
+                <th scope="col">Group</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
                 <th scope="col"></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+              
+              <tr> 
                 <th scope="row">
                   <div class="media align-items-center">                   
                     <div class="media-body">
-                      <span class="mb-0 text-sm">Faculty Name#1</span>
+                      <span class="mb-0 text-sm">Group #1</span>
                     </div>
                   </div>
                 </th>
                 <td>
-
+                
                 </td>               
                 <td>
-                  Approved
+                  <button type="button" class="btn btn-primary" [routerLink]="['/capstoneGroup']" >View</button>
                 </td>
                 <td class="text-right">
                   <div ngbDropdown placement="bottom-right">
@@ -55,25 +47,26 @@
                       <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                      <a class="dropdown-item" href="javascript:void(0)">Approve</a>
+                      <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/capstonetitles']">Add Panel and Adviser</a>
                       <a class="dropdown-item" href="javascript:void(0)">Remove</a>
                     </div>
                   </div>
                 </td>
               </tr>
+             
               <tr>
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">
-                      <span class="mb-0 text-sm">Faculty Name#2</span>
+                      <span class="mb-0 text-sm">Group #2</span>
                     </div>
                   </div>
                 </th> 
                 <td>
-
-                </td>            
+              
+                  </td>             
                 <td>
-                  Waiting for Approval
+                  <button type="button" class="btn btn-primary" [routerLink]="['/capstoneGroup']" >View</button>
                 </td>             
                 <td class="text-right">
                   <div ngbDropdown  placement="bottom-right">
@@ -81,25 +74,25 @@
                       <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                      <a class="dropdown-item" href="javascript:void(0)">Approve</a>
                       <a class="dropdown-item" href="javascript:void(0)">Remove</a>
                     </div>
                   </div>
                 </td>
               </tr>
+
               <tr>
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">
-                      <span class="mb-0 text-sm">Faculty Name#3</span>
+                      <span class="mb-0 text-sm">Group #3</span>
                     </div>
                   </div>
                 </th>  
                 <td>
-    
-                </td>         
+                  
+                </td>          
                 <td>
-                  Approved
+                  <button type="button" class="btn btn-primary" [routerLink]="['/capstoneGroup']" >View</button>
                 </td>
                 <td class="text-right">
                   <div ngbDropdown  placement="top-right">
@@ -107,25 +100,25 @@
                       <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                      <a class="dropdown-item" href="javascript:void(0)">Approve</a>
                       <a class="dropdown-item" href="javascript:void(0)">Remove</a>
                     </div>
                   </div>
                 </td>
               </tr>
-              <tr>
+
+              <tr >
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">
-                      <span class="mb-0 text-sm">Faculty Name#4</span>
+                      <span class="mb-0 text-sm">Group #4</span>
                     </div>
                   </div>
                 </th>     
                 <td>
-
-                </td>         
+             
+                </td>           
                 <td>
-                  Approved
+                  <button type="button" class="btn btn-primary" [routerLink]="['/capstoneGroup']" >View</button>
                 </td>
                 <td class="text-right">
                   <div ngbDropdown   placement="top-right">
@@ -133,25 +126,25 @@
                       <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                      <a class="dropdown-item" href="javascript:void(0)">Approve</a>
                       <a class="dropdown-item" href="javascript:void(0)">Remove</a>
                     </div>
                   </div>
                 </td>
               </tr>
+
               <tr>
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">
-                      <span class="mb-0 text-sm">Faculty Name#5</span>
+                      <span class="mb-0 text-sm">Group #5</span>
                     </div>
                   </div>
                 </th>
-                 <td>
-
-                </td>
                 <td>
-                  Approved
+                 
+                </td>  
+                <td>
+                  <button type="button" class="btn btn-primary"  [routerLink]="['/capstoneGroup']">View</button>
                 </td>
                 <td class="text-right">
                   <div ngbDropdown   placement="top-right">
@@ -159,7 +152,6 @@
                       <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                      <a class="dropdown-item" href="javascript:void(0)">Approve</a>
                       <a class="dropdown-item" href="javascript:void(0)">Remove</a>
                     </div>
                   </div>

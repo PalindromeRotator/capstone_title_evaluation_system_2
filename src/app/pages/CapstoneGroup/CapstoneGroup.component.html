@@ -12,7 +12,7 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header border-0">
-          <button class="AddGroup" role="button">Add Group</button>
+          <button class="AddGroup" role="button">Add Title</button>
         </div>
         <div class="table-responsive">
           <table class="table align-items-center table-flush">
@@ -20,7 +20,8 @@
               <tr>
                 <th scope="col">Name of the Capstone Project</th>
                 <th scope="col">Section</th>
-                <th scope="col"></th>
+                <th scope="col"></th> 
+                <th scope="col"></th> 
               </tr>
             </thead>
             <tbody>
@@ -41,15 +42,21 @@
                 </td>
                 <td>
                   <button type="button"  class="btn btn-primary" [routerLink]="['/capstonegroupview']">View</button>
-                  <button type="button"  class="btn btn-danger" >Remove</button>
+                  <button type="button"  class="btn btn-success" >Save</button>
                 </td> 
+                <td class="text-right">
+                  <div ngbDropdown placement="bottom-right">
+                    <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
+                      <i class="fas fa-ellipsis-v"></i>
+                    </a>
+                    <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
+                      <a class="dropdown-item" href="javascript:void(0)">Remove</a>
+                    </div>
+                  </div>
+                </td>
                </tr>
                <td><button class="AddGrade" role="button" (click)="openPopup()">See Grade</button></td>
-                <td></td>
-                <!-- <td align="right">          
-                <button class="save" role="button">Upload</button>
-                <button class="edit" role="button">Edit</button>   
-                </td>   -->
+               
             </tbody>
           </table>
 

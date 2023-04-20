@@ -3,7 +3,7 @@
     <div class="header-body text-center mb-7">
       <div class="row justify-content-center">
         <div class="col-lg-5 col-md-6">
-          <h1 class="text-white">Capstone Group</h1>
+          <h1 class="text-white">Faculty</h1>
           <!-- <p class="text-lead text-light">Use these awesome forms to login or create new account in your project for free.</p> -->
         </div>
       </div>
@@ -16,166 +16,78 @@
   </div>
 </div>
 <!-- Page content -->
-<!-- <div class="container mt--8 pb-20"> -->
-  <div class="col-xl-10 order-xl-1 center mt--9">
-    <div class="card bg-secondary shadow">
-      <div class="card-header bg-white border-0">
-        <div class="row align-items-center">
-          <div class="col-8">
-            <h3 class="mb-0">Register</h3>
+<div class="container mt--8 pb-5">
+  <!-- Table -->
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8">
+      <div class="card bg-secondary shadow border-0">
+        <!-- <div class="card-header bg-transparent pb-5">
+          <div class="text-muted text-center mt-2 mb-4"><small>Sign up with</small></div>
+          <div class="text-center">
+            <a href="javascript:void(0)" class="btn btn-neutral btn-icon mr-4">
+              <span class="btn-inner--icon"><img src="assets/img/icons/common/github.svg"></span>
+              <span class="btn-inner--text">Github</span>
+            </a>
+            <a href="javascript:void(0)" class="btn btn-neutral btn-icon">
+              <span class="btn-inner--icon"><img src="assets/img/icons/common/google.svg"></span>
+              <span class="btn-inner--text">Google</span>
+            </a>
           </div>
+        </div> -->
+        <div class="card-body px-lg-5 py-lg-5">
+          <!-- <div class="text-center text-muted mb-4">
+            <small>Or sign up with credentials</small>
+          </div> -->
+          <form role="form">
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                </div>
+                <input class="form-control" placeholder="Capstone Group" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-email-83"></i></span>
+                </div>
+                <input class="form-control" placeholder="Email" type="email">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                </div>
+                <input class="form-control" placeholder="Password" type="password">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                </div>
+                <input class="form-control" placeholder="Confirm Password" type="password">
+              </div>
+            </div>
+            <!-- <div class="text-muted font-italic"><small>password strength: <span class="text-success font-weight-700">strong</span></small></div> -->
+            <div class="row my-4">
+              <div class="col-12">
+                <div class="custom-control custom-control-alternative custom-checkbox">
+                  <input class="custom-control-input" id="customCheckRegister" type="checkbox">
+                  <!-- <label class="custom-control-label" for="customCheckRegister">
+                    <span class="text-muted">I agree with the <a href="#!">Privacy Policy</a></span>
+                  </label> -->
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <button class="RegisterButton" role="button">Sign Up</button>
+            </div>
+          </form>
         </div>
-      </div>
-      <div class="card-body">
-        <form>
-          <!-- <h6 class="heading-small text-muted mb-4">User information</h6> -->
-          <div class="pl-lg-3">
-            <div class="row">
-              <div class="col-lg-3">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-email">First Name</label>
-                  <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your First Name">
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-email">Middle Name</label>
-                  <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your Middle Name">
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-email">Last Name</label>
-                  <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your Last Name">
-                </div>
-              </div>
-              <div class="col-md-3 mb-4">
-                <h4 class="mb-2 pb-1">Gender: </h4>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                    value="option1" checked />
-                  <label class="form-check-label" for="femaleGender">Female</label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                    value="option2" />
-                  <label class="form-check-label" for="maleGender">Male</label>
-                </div>
-
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
-                    value="option3" />
-                  <label class="form-check-label" for="otherGender">Other</label>
-                </div>
-              </div> 
-            </div>
-            <!-- CAPSTONE GROUP OTHER DETAILS -->
-            <div class="row">      
-
-              <div class="col-lg-4">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-last-name">Email Address</label>
-                  <input type="text" id="inputSection" class="form-control form-control-alternative" placeholder="Enter your Email Address">
-                </div>
-              </div>   
-              <div class="col-lg-4">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-last-name">Password</label>
-                  <input type="text" id="inputSection" class="form-control form-control-alternative" placeholder="Enter your Password">
-                </div>
-              </div>
-
-              <div class="col-lg-4">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-last-name">Confirm Password</label>
-                  <input type="text" id="inputSection" class="form-control form-control-alternative" placeholder="Confirm Passowrd">
-                </div>
-              </div>
-            </div>
-            <hr>
-            <div class="row">      
-
-              <div class="col-lg-4">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-last-name">Home Address</label>
-                  <input type="text" id="inputSection" class="form-control form-control-alternative" placeholder="Enter your Home Address">
-                </div>
-              </div>   
-              <div class="col-lg-4">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-last-name">Mobile Number</label>
-                  <input type="text" id="inputSection" class="form-control form-control-alternative" placeholder="Enter your Mobile Number" type="number">
-                </div>
-              </div>
-
-              <div class="col-lg-4">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-last-name">Year/Section/Group</label>
-                  <input type="text" id="inputSection" class="form-control form-control-alternative" placeholder="Enter your Year/Section/Group" type="number">
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-3">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-username">Program</label>
-                  <input type="text" id="inputUsername" class="form-control form-control-alternative" placeholder="Enter your Program">
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-email">Control No.</label>
-                  <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your Control No." type="number"> 
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-email">Specialization</label>
-                  <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your Specialization">
-                </div>
-              </div>
-              <div class="col-lg-3">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-email">ORCID No.</label>
-                  <input type="email" id="inputEmail" class="form-control form-control-alternative" placeholder="Enter your ORCID No.">
-                </div>
-              </div>
-            </div>
-            <!-- CAPSTONE GROUP OTHER DETAILS -->
-            <div class="row">        
-              <div class="col-lg-3">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-last-name">Marital Status</label>
-                  <input type="text" id="inputSection" class="form-control form-control-alternative" placeholder="Enter your Marital Status">
-                </div>
-              </div>
-
-              <div class="col-lg-3">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-last-name">Parent/Guardian Name</label>
-                  <input type="text" id="inputSection" class="form-control form-control-alternative" placeholder="Enter your Parent/Guardian Name">
-                </div>
-              </div>
-
-              <div class="col-lg-3">
-                <div class="form-group">
-                  <label class="form-control-label" for="input-last-name">Parent/Gurdian Mobile No.</label>
-                  <input type="text" id="inputSection" class="form-control form-control-alternative" placeholder="Enter Parent/Gurdian Mobile No.">
-                </div>
-              </div>
-
-              <div class="col-lg-3 mt-4">
-                <div class="form-group">
-                  <button class="RegisterButton" role="button" routerLinkActive="active" [routerLink]="['/login']">Sign Up</button>
-                </div>
-              </div>
-            </div>
-          </div>         
-        </form>
       </div>
     </div>
   </div>
-
-
- 
+</div>
