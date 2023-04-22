@@ -12,7 +12,7 @@ import { CapstoneTitles } from 'src/app/pages/CapstoneTitles/CapstoneTitles.comp
 import { tables } from 'src/app/pages/tables/tables.component';
 import { CapstoneGroupList } from 'src/app/pages/CapstoneGroupList/CapstoneGroupList.component';
 import { ReportGeneration } from 'src/app/pages/ReportGeneration/ReportGeneration.component';
-
+import { ContentManagement } from 'src/app/pages/ContentManagement/ContentManagement.component';
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -27,9 +27,6 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'assigncoordinator',   component: AssignCoordinator },
     { path: 'capstonetitles',   component: CapstoneTitles },
     { path: 'capstonegrouplist',   component: CapstoneGroupList },
-    { path: 'reportgeneration',   component: ReportGeneration }
-
-
-    
-  
+    { path: 'reportgeneration',   component: ReportGeneration },
+    { path: 'contentmanagement',   component: ContentManagement }
 ];
