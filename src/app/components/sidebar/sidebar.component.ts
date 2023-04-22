@@ -13,6 +13,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/dashboard', title: 'Admin Dashboard',  icon: 'ni-tv-2 text-primary', class: '' },
     { path: '/capstonegrouplist', title: 'Capstone Group List',  icon:'ni-circle-08 text-pink', class: '' },
     { path: '/panelsandadviser', title: 'Panels and Adviser',  icon:'ni-circle-08 text-pink', class: '' },
+    { path: '/reportgeneration', title: 'Report Generation',  icon:'ni-circle-08 text-pink', class: '' },
     { path: '/icons', title: 'Working',  icon:'ni-planet text-blue', class: '' },
     { path: '/login', title: 'Login',  icon:'ni-key-25 text-info', class: '' },
     { path: '/registerOptions', title: 'Register',  icon:'ni-circle-08 text-pink', class: '' },

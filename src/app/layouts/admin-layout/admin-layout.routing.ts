@@ -11,6 +11,8 @@ import { AssignCoordinator} from 'src/app/pages/AssignCoordinator/AssignCoordina
 import { CapstoneTitles } from 'src/app/pages/CapstoneTitles/CapstoneTitles.component';
 import { tables } from 'src/app/pages/tables/tables.component';
 import { CapstoneGroupList } from 'src/app/pages/CapstoneGroupList/CapstoneGroupList.component';
+import { ReportGeneration } from 'src/app/pages/ReportGeneration/ReportGeneration.component';
+
 
 
 export const AdminLayoutRoutes: Routes = [
@@ -24,7 +26,9 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'panelsandadviserview',   component: PanelsAndAdviserView },
     { path: 'assigncoordinator',   component: AssignCoordinator },
     { path: 'capstonetitles',   component: CapstoneTitles },
-    { path: 'capstonegrouplist',   component: CapstoneGroupList }
+    { path: 'capstonegrouplist',   component: CapstoneGroupList },
+    { path: 'reportgeneration',   component: ReportGeneration }
+
 
     
   

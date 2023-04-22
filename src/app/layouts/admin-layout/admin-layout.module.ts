@@ -18,7 +18,7 @@ import { AssignCoordinator} from 'src/app/pages/AssignCoordinator/AssignCoordina
 import { CapstoneTitles } from 'src/app/pages/CapstoneTitles/CapstoneTitles.component';
 import {tables} from 'src/app/pages/tables/tables.component';
 import { CapstoneGroupList } from 'src/app/pages/CapstoneGroupList/CapstoneGroupList.component';
-
+import { ReportGeneration } from 'src/app/pages/ReportGeneration/ReportGeneration.component';
 
 
 // import { ToastrModule } from 'ngx-toastr';
@@ -43,7 +43,8 @@ import { CapstoneGroupList } from 'src/app/pages/CapstoneGroupList/CapstoneGroup
     PanelsAndAdviserView,
     AssignCoordinator,
     CapstoneTitles,
-    CapstoneGroupList
+    CapstoneGroupList,
+    ReportGeneration
  
   ]
 })
