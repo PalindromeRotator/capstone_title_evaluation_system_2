@@ -8,6 +8,8 @@ import {
   chartExample1,
   chartExample2
 } from "../../variables/charts";
+import { UsersService } from 'src/app/services/users.service';
+import { TitlesService } from 'src/app/services/titles.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,45 +18,46 @@ import {
 })
 export class DashboardComponent implements OnInit {
 
-  public datasets: any;
-  public data: any;
-  public salesChart;
-  public clicked: boolean = true;
-  public clicked1: boolean = false;
+  dashboardData = {
+    users: 0,
+    capstone_titles: 0,
+    faculty: 0,
+    coordinators: 0
+  }
+  constructor(private usersService: UsersService, private titlesService: TitlesService) {
 
+  }
   ngOnInit() {
+    this.usersService.getAll().subscribe(
+      response => {
+        this.dashboardData.users = response.length
+      }
+    )
 
-    this.datasets = [
-      [0, 20, 10, 30, 15, 40, 20, 60, 60],
-      [0, 20, 5, 25, 10, 30, 15, 40, 40]
-    ];
-    this.data = this.datasets[0];
+    this.usersService.getAllFaculty().subscribe(
+      response => {
+        this.dashboardData.faculty = response.length
+      }
+    )
 
+    this.titlesService.getAll().subscribe(
+      response => {
+        for (let data of response) {
+          this.dashboardData.capstone_titles = JSON.parse(data.titles).length
+        }
+      }
+    )
 
-    var chartOrders = document.getElementById('chart-orders');
-
-    parseOptions(Chart, chartOptions());
-
-
-    var ordersChart = new Chart(chartOrders, {
-      type: 'bar',
-      options: chartExample2.options,
-      data: chartExample2.data
-    });
-
-    var chartSales = document.getElementById('chart-sales');
-
-    this.salesChart = new Chart(chartSales, {
-			type: 'line',
-			options: chartExample1.options,
-			data: chartExample1.data
-		});
+    this.usersService.getAll().subscribe(
+      response => {
+        for (let data of response) {
+          if (data.user_type === 'capstone_coordinator') {
+            this.dashboardData.coordinators += 1
+          }
+        }
+      }
+    )
   }
 
-
-  public updateOptions() {
-    this.salesChart.data.datasets[0].data = this.data;
-    this.salesChart.update();
-  }
 
 }

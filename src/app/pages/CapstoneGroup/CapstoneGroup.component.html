@@ -12,218 +12,438 @@
     <div class="col">
       <div class="card shadow">
         <div class="card-header border-0">
-          <button class="AddGroup" role="button">Add Title</button>
-        </div>
-        <div class="table-responsive">
-          <table class="table align-items-center table-flush">
-            <thead class="thead-light">
-              <tr>
-                <th scope="col">Name of the Capstone Project</th>
-                <th scope="col">Section</th>
-                <th scope="col"></th> 
-                <th scope="col"></th> 
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">
-                  <div class="media align-items-center">                   
-                    <div class="media-body">
-                      <div class="input-group flex-nowrap">                       
-                        <input type="text" class="form-control" placeholder="Enter the name of your Capstone Project" aria-label="Capstone Project" aria-describedby="addon-wrapping">
-                      </div>
-                    </div>
-                  </div>
-                </th>              
-                <td>
-                  <div class="input-group flex-nowrap">                       
-                    <input type="text" class="form-control" placeholder="Section" aria-label="Capstone Project" aria-describedby="addon-wrapping">
-                  </div>
-                </td>
-                <td>
-                  <button type="button"  class="btn btn-primary" [routerLink]="['/capstonegroupview']">View</button>
-                  <button type="button"  class="btn btn-success" >Save</button>
-                </td> 
-                <td class="text-right">
-                  <div ngbDropdown placement="bottom-right">
-                    <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
-                      <i class="fas fa-ellipsis-v"></i>
-                    </a>
-                    <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
-                      <a class="dropdown-item" href="javascript:void(0)">Remove</a>
-                    </div>
-                  </div>
-                </td>
-               </tr>
-               <td><button class="AddGrade" role="button" (click)="openPopup()">See Grade</button></td>
-               
-            </tbody>
-          </table>
 
-          <div class="modal" id="myModal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}" aria-labelledby="exampleModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog modal-xl">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title">GRADE</h3>
-              <button type="button" class="close" data-dismiss="modal" (click)="closePopup()">&times;</button>                        
+          <div *ngIf="user_type==='admin'">
+
+            <br>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">Group Name</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Example input placeholder" [(ngModel)]="titleObject.group_name" disabled>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">Section</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Example input placeholder" [(ngModel)]="titleObject.section" disabled>
+                </div>
+              </div>
             </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
                   <tr>
-                    <th scope="col">No</th>
-                    <th scope="col">Is the capstone project topic presented...</th>                       
-                    <th scope="col">T1</th>
-                    <th scope="col">T2</th>
-                    <th scope="col">T3</th>
+                    <th scope="col">Name of the Capstone Project</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">File</th>
                   </tr>
                 </thead>
                 <tbody>
+                  <tr *ngFor="let data of titlesArray; let i=index">
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <div class="input-group flex-nowrap">
 
-                  
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>
-                      Relevant to the current societal  or technological trends of today's generation?
-                    </td>
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <p>{{data.title}}</p>
+                          </div>
+                        </div>
                       </div>
+                    </th>
+                    <td *ngIf="i === 0">
+                      {{titlesScoreObject.title_1}}
+                    </td>
+                    <td *ngIf="i === 1">
+                      {{titlesScoreObject.title_2}}
+                    </td>
+                    <td *ngIf="i === 2">
+                      {{titlesScoreObject.title_3}}
                     </td>
                     <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                      <div class="input-group flex-nowrap">
+                        <button class="btn btn-primary" (click)="downloadFile(data.file)">Download</button>
                       </div>
                     </td>
                   </tr>
 
-
-                  <tr>
-                    <th scope="row">2</th>   
-                    <td>
-                      Has clearly stated the problem to be s  olved/compelling reasons for the study as evidence of stakeholder  consultation?
-                    </td>                
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                  </tr>
-
-
-                  <tr>
-                    <th scope="row">3</th> 
-                    <td>
-                      Has a concise understanding of how these issues can be solved?
-                    </td>                   
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                  </tr>
-
-
-                  <tr>
-                    <th scope="row">4</th>  
-                    <td>
-                      Has impact and can be published in a referred journal?
-                    </td>                    
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                  </tr>
-
-
-                  <tr>
-                    <th scope="row">5</th> 
-                    <td>
-                      Followed the standard number of words used for its research title, typically 10-12 words long?
-                    </td>                  
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                  </tr>
-
-
-                  <tr>
-                    <th scope="row">6</th>  
-                    <td>
-                      Congruent to the nature  of the discipline/courses enrolled?
-                    </td>                                       
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                    <td>
-                      <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      </div>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
+
+          <div *ngIf="user_type==='faculty' || user_type === 'capstone_coordinator'">
+
+            <br>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">Group Name</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Example input placeholder" [(ngModel)]="titleObject.group_name" disabled>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">Section</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Example input placeholder" [(ngModel)]="titleObject.section" disabled>
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Name of the Capstone Project</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">File</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of titlesArray; let i=index">
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <div class="input-group flex-nowrap">
+
+                            <p>{{data.title}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <td *ngIf="i === 0">
+                      {{titlesScoreObject.title_1}}
+                    </td>
+                    <td *ngIf="i === 1">
+                      {{titlesScoreObject.title_2}}
+                    </td>
+                    <td *ngIf="i === 2">
+                      {{titlesScoreObject.title_3}}
+                    <td>
+                      <div class="input-group flex-nowrap">
+                        <button class="btn btn-primary" (click)="downloadFile(data.file)">Download</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <td><button class="AddGrade" role="button" (click)="openPopup()">See Grade</button></td>
+
+                </tbody>
+              </table>
+            </div>
           </div>
-          </div>  
+
+          <div *ngIf="user_type==='capstone_group'">
+            <div class="row">
+              <div class="col">
+                <input type="text" class="form-control" placeholder="Enter the name of your Capstone Project"
+                  aria-label="Capstone Project" aria-describedby="addon-wrapping" [(ngModel)]="titleData.title">
+              </div>
+              <div class="col">
+                <input type="file" class="form-control" id="inputGroupFile02" (change)="onFileSelected2($event)">
+              </div>
+              <button class="AddGroup" role="button" (click)="saveChanges()">Add Title</button>
+            </div>
+
+            <br>
+            <div class="row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">Group Name</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Example input placeholder" [(ngModel)]="titleObject.group_name" disabled>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">Section</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Example input placeholder" [(ngModel)]="titleObject.section" disabled>
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Name of the Capstone Project</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">File</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of titlesArray; let i=index">
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <div class="input-group flex-nowrap">
+
+                            <p>{{data.title}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <td *ngIf="i === 0">
+                      {{titlesScoreObject.title_1}}
+                    </td>
+                    <td *ngIf="i === 1">
+                      {{titlesScoreObject.title_2}}
+                    </td>
+                    <td *ngIf="i === 2">
+                      {{titlesScoreObject.title_3}}
+                    </td>
+                    <td>
+                      <div class="input-group flex-nowrap">
+                        <button class="btn btn-primary" (click)="downloadFile(data.file)">Download</button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- <td><button class="AddGrade" role="button">Save Changes</button></td> -->
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+          <div class="modal" id="myModal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}"
+            aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h3 class="modal-title">GRADE</h3>
+                  <button type="button" class="close" data-dismiss="modal" (click)="closePopup()">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Review Question</th>
+                        <th>Title 1</th>
+                        <th>Title 2</th>
+                        <th>Title 3</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Relevant to the current social issue or
+                          technologies trends of today’s generation?</td>
+                        <td><input type="checkbox" name="customer-service" value="1" (change)="checkValue($event)"></td>
+                        <td><input type="checkbox" name="customer-service" value="2" (change)="checkValue($event)"></td>
+                        <td><input type="checkbox" name="customer-service" value="3" (change)="checkValue($event)"></td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Has clearly stated the problem to be
+                          solved?</td>
+                        <td><input type="checkbox" name="customer-service" value="1" (change)="checkValue($event)"></td>
+                        <td><input type="checkbox" name="customer-service" value="2" (change)="checkValue($event)"></td>
+                        <td><input type="checkbox" name="customer-service" value="3" (change)="checkValue($event)"></td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>Has conscious understanding of how theses
+                          issues can be solved?</td>
+                        <td><input type="checkbox" name="customer-service" value="1" (change)="checkValue($event)"></td>
+                        <td><input type="checkbox" name="customer-service" value="2" (change)="checkValue($event)"></td>
+                        <td><input type="checkbox" name="customer-service" value="3" (change)="checkValue($event)"></td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Has impact and can be published in a
+                          referred journal?</td>
+                        <td><input type="checkbox" name="customer-service" value="1" (change)="checkValue($event)"></td>
+                        <td><input type="checkbox" name="customer-service" value="2" (change)="checkValue($event)"></td>
+                        <td><input type="checkbox" name="customer-service" value="3" (change)="checkValue($event)"></td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Followed the standard number of words used for its research title?</td>
+                        <td><input type="checkbox" name="customer-service" value="1" (change)="checkValue($event)"></td>
+                        <td><input type="checkbox" name="customer-service" value="2" (change)="checkValue($event)"></td>
+                        <td><input type="checkbox" name="customer-service" value="3" (change)="checkValue($event)"></td>
+                      </tr>
+                      <tr>
+                        <td>6</td>
+                        <td>Congruent to the nature of the discipline/courses enrolled?</td>
+                        <td><input type="checkbox" name="customer-service" value="1" (change)="checkValue($event)"></td>
+                        <td><input type="checkbox" name="customer-service" value="2" (change)="checkValue($event)"></td>
+                        <td><input type="checkbox" name="customer-service" value="3" (change)="checkValue($event)"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="mb-3">
+                    <button class="btn btn-success" (click)="submit()">Submit</button>
+                  </div>
+                  <!-- <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Is the capstone project topic presented...</th>
+                        <th scope="col">T1</th>
+                        <th scope="col">T2</th>
+                        <th scope="col">T3</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+
+
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>
+                          Relevant to the current societal or technological trends of today's generation?
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                      </tr>
+
+
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>
+                          Has clearly stated the problem to be s olved/compelling reasons for the study as evidence of
+                          stakeholder consultation?
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                      </tr>
+
+
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>
+                          Has a concise understanding of how these issues can be solved?
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                      </tr>
+
+
+                      <tr>
+                        <th scope="row">4</th>
+                        <td>
+                          Has impact and can be published in a referred journal?
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                      </tr>
+
+
+                      <tr>
+                        <th scope="row">5</th>
+                        <td>
+                          Followed the standard number of words used for its research title, typically 10-12 words long?
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                      </tr>
+
+
+                      <tr>
+                        <th scope="row">6</th>
+                        <td>
+                          Congruent to the nature of the discipline/courses enrolled?
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                        <td>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table> -->
+                </div>
+              </div>
+            </div>
+          </div>
 
 
 
@@ -232,10 +452,3 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-

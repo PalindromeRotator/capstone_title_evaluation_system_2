@@ -6,47 +6,39 @@
   </div>
 </div>
 <!-- Page content -->
-<div  class="container-fluid mt--7">
-<div class="container">
-	<div class="display">
-		<div class="display-item">
-			<div class="card seamus">
+<div class="container-fluid mt--7">
+  <div class="container">
+    <div class="display">
+      <div class="display-item">
+        <div class="card seamus">
 
-				<div  class="card-top" [style.backgroundImage]="coverPhotoUrl"></div>
-        <input type="file" (change)="onFileSelected($event)">
+          <div class="card-top" [style.backgroundImage]="coverPhotoUrl"></div>
+          <input type="file" (change)="onFileSelected($event)">
 
 
-        
-<div class="profile-pic">
-  <label class="-label" for="file">
-    <span class="glyphicon glyphicon-camera"></span>
-    <span>Change Image</span>
-  </label>
-  <input id="file" type="file" onchange="loadFile(event)"/>
-  <img src="assets/img/theme/Pelep1.jpg" id="output" width="200" />
-</div>
-        
-				<!-- <div class="card-profile">
+
+          <div class="profile-pic">
+            <label class="-label" for="file">
+              <span class="glyphicon glyphicon-camera"></span>
+              <span>Change Image</span>
+            </label>
+            <input id="file" type="file" (change)="onFileSelected($event)" />
+            <!-- <img src="assets/img/theme/Pelep1.jpg" id="output" width="200" /> -->
+            <img src="{{contentData.file}}" id="output" width="200" />
+          </div>
+
+          <!-- <div class="card-profile">
 					<div class="profile-image">
 					</div>
 				</div> -->
-        
-        <br><br><br><br><br><br>
-				<div class="card-info">
-					<div class="info-title">
-						<h2>Name</h2>
-						<h3>Leader</h3>
-					</div>
-					<hr>
-					<div class="info-bio">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</div>
-				</div>
-			</div>
-		</div>
-</div>
-</div>
- 
+
+          <br><br><br><br><br><br>
+          <button class="btn btn-primary" (click)="saveChanges()"> Save Changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
 
   <!-- Dark table -->

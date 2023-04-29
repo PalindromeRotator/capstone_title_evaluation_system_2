@@ -2,7 +2,7 @@
   <div class="container-fluid">
     <!-- Brand -->
     <!-- <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" routerLinkActive="active" [routerLink]="['/dashboard']">{{getTitle()}}</a> -->
-    <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" routerLinkActive="active" ></a>
+    <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" routerLinkActive="active"></a>
     <!-- Form -->
     <!-- User -->
     <ul class="navbar-nav align-items-center d-none d-md-flex">
@@ -10,10 +10,10 @@
         <a class="nav-link pr-0" role="button" ngbDropdownToggle>
           <div class="media align-items-center">
             <span class="avatar avatar-sm rounded-circle">
-              <img alt="Image placeholder" src="assets/img/theme/Pelep1.jpg">
+              <img alt="Image placeholder" src="{{file}}">
             </span>
             <div class="media-body ml-2 d-none d-lg-block">
-              <span class="mb-0 text-sm  font-weight-bold">Pelep Pogi</span>
+              <span class="mb-0 text-sm  font-weight-bold">{{name }}</span>
             </div>
           </div>
         </a>
