@@ -74,7 +74,7 @@
             </div>
           </div>
 
-          <div *ngIf="user_type==='faculty' || user_type === 'capstone_coordinator'">
+          <div *ngIf="user_type==='faculty'">
 
             <br>
             <div class="row">
@@ -133,6 +133,106 @@
                 </tbody>
               </table>
             </div>
+          </div>
+
+          <div *ngIf="user_type === 'capstone_coordinator'">
+
+            <br>
+            <div class=" row">
+              <div class="col">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">Group Name</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Example input placeholder" [(ngModel)]="titleObject.group_name" disabled>
+                </div>
+              </div>
+              <div class="col">
+                <div class="mb-3">
+                  <label for="formGroupExampleInput" class="form-label">Section</label>
+                  <input type="text" class="form-control" id="formGroupExampleInput"
+                    placeholder="Example input placeholder" [(ngModel)]="titleObject.section" disabled>
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Name of the Capstone Project</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">File</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of titlesArray; let i=index">
+                    <th scope="row">
+                      <div class="media align-items-center">
+                        <div class="media-body">
+                          <div class="input-group flex-nowrap">
+
+                            <p>{{data.title}}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </th>
+                    <td *ngIf="i === 0">
+                      {{titlesScoreObject.title_1}}
+                    </td>
+                    <td *ngIf="i === 1">
+                      {{titlesScoreObject.title_2}}
+                    </td>
+                    <td *ngIf="i === 2">
+                      {{titlesScoreObject.title_3}}
+                    <td>
+                      <div class="input-group flex-nowrap">
+                        <button class="btn btn-primary" (click)="downloadFile(data.file)">Download</button>
+                      </div>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <label for="formGroupExampleInput" class="form-label">Adviser and Panels</label>
+            <br>
+            <div class="dropdown">
+              <div class="chip-container">
+                <div class="chip" *ngFor="let data of facultyList">
+                  <div (click)="addPanelAdviser(data)">{{data.name}}</div>
+                </div>
+              </div>
+            </div>
+            <br>
+            <br>
+            <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between align-items-center">
+                <p>{{adviser.name}}</p>
+                <div class="row">
+                  <div class="col">
+                    <span class="badge bg-secondary rounded-pill">
+                      Adviser
+                    </span>
+                  </div>
+                </div>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"
+                *ngIf="panelsArray.length <= 0">
+                <p>No Adviser and panels yet</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center"
+                *ngFor="let data of panelsArray">
+                <p>{{data.name}}</p>
+                <div class="row">
+                  <div class="col">
+                    <span class="badge bg-primary rounded-pill">
+                      Panel
+                    </span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
           </div>
 
           <div *ngIf="user_type==='capstone_group'">

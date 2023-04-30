@@ -32,13 +32,7 @@
             <button type="button" class="btn btn-primary" style="height:45px; width: 200px;"
               (click)="findFilter()">Find</button>
             <button type="button" class="btn btn-success" style="height:45px; width: 200px; float: right;"
-              triggers="hover focus click">
-              <div>
-                <button class="btn btn-success" (click)="exportexcel('excel-table','excel-table')">
-                  Download
-                </button>
-
-              </div>
+              triggers="hover focus click" (click)="exportexcel('excel-table','excel-table')">Download result
             </button>
           </div>
         </div>
@@ -46,7 +40,7 @@
 
 
         <div class="table-responsive">
-          <table class="table align-items-center table-flush">
+          <table class="table align-items-center table-flush" id="excel-table">
             <thead class="thead-light">
               <tr>
                 <th scope="col">Group Name</th>
@@ -56,7 +50,7 @@
             </thead>
             <tbody>
 
-              <tr *ngFor="let data of titlesData" id="excel-table">
+              <tr *ngFor="let data of titlesData">
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">

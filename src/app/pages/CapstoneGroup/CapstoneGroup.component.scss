@@ -1,11 +1,13 @@
-.btn{
+.btn {
   width: 50%;
 }
+
 td[align="right"] {
   text-align: right;
 }
+
 /* CSS */
-.save{
+.save {
   align-items: center;
   background-clip: padding-box;
   background-color: #199700;
@@ -16,7 +18,7 @@ td[align="right"] {
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
   justify-content: center;
@@ -51,7 +53,7 @@ td[align="right"] {
 }
 
 
-.edit{
+.edit {
   align-items: center;
   background-clip: padding-box;
   background-color: #00b2d1;
@@ -62,7 +64,7 @@ td[align="right"] {
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
   justify-content: center;
@@ -96,7 +98,7 @@ td[align="right"] {
   transform: translateY(0);
 }
 
-.AddGrade{
+.AddGrade {
   align-items: center;
   background-clip: padding-box;
   background-color: #eb6d19;
@@ -107,7 +109,7 @@ td[align="right"] {
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
   justify-content: center;
@@ -124,11 +126,13 @@ td[align="right"] {
   vertical-align: baseline;
   width: 40%;
 }
+
 .AddGrade:hover,
 .AddGrade:focus {
   background-color: #ce5c11;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
+
 .AddGrade:hover {
   transform: translateY(-1px);
 }
@@ -138,7 +142,8 @@ td[align="right"] {
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
 }
-.modal{
+
+.modal {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -149,7 +154,7 @@ td[align="right"] {
 
 
 
-.AddGroup{
+.AddGroup {
   align-items: center;
   background-clip: padding-box;
   background-color: #00a008;
@@ -160,7 +165,7 @@ td[align="right"] {
   color: #fff;
   cursor: pointer;
   display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
   justify-content: center;
@@ -183,6 +188,7 @@ td[align="right"] {
   background-color: #119200;
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }
+
 .AddGroup:hover {
   transform: translateY(-1px);
 }
@@ -191,4 +197,29 @@ td[align="right"] {
   background-color: #00b109;
   box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
   transform: translateY(0);
+}
+
+/* Style the chip container */
+.chip-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Style the individual chips */
+.chip {
+  background-color: #f1f1f1;
+  color: #333;
+  border-radius: 16px;
+  padding: 8px 16px;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Change the background color and text color on hover */
+.chip:hover {
+  background-color: #333;
+  color: #f1f1f1;
 }
