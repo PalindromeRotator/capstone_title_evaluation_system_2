@@ -19,33 +19,25 @@
 
           <div class="row" style="width: 100%;">
             <div class="col">
-              <div class="form-group">
-                <div class="input-group input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                  </div>
-                  <input class="form-control" placeholder="Start date" type="text" value="From 06/18/2020">
-                </div>
-              </div>
+              <label for="date">From: </label>
+              <input class="datepicker" type="date" id="date" name="date" [(ngModel)]="filter.from" />
+
             </div>
             <div class="col">
-              <div class="form-group">
-                <div class="input-group input-group-alternative">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="ni ni-calendar-grid-58"></i></span>
-                  </div>
-                  <input class="form-control" placeholder="End date" type="text" value="Into 06/22/2020">
-                </div>
-              </div>
+              <label for="date">Into: </label>
+              <input class="datepicker" type="date" id="date" name="date" [(ngModel)]="filter.into" />
             </div>
 
 
-            <button type="button" class="btn btn-primary" style="height:45px; width: 200px;">Find</button>
+            <button type="button" class="btn btn-primary" style="height:45px; width: 200px;"
+              (click)="findFilter()">Find</button>
             <button type="button" class="btn btn-success" style="height:45px; width: 200px; float: right;"
               triggers="hover focus click">
               <div>
-                <i class="ni ni-cloud-upload-96"></i>
-                Download
+                <button class="btn btn-success" (click)="exportexcel('excel-table','excel-table')">
+                  Download
+                </button>
+
               </div>
             </button>
           </div>
@@ -57,27 +49,26 @@
           <table class="table align-items-center table-flush">
             <thead class="thead-light">
               <tr>
-                <th scope="col">Report</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
+                <th scope="col">Group Name</th>
+                <th scope="col">Section</th>
+                <th scope="col">Created At</th>
               </tr>
             </thead>
             <tbody>
 
-              <tr>
+              <tr *ngFor="let data of titlesData" id="excel-table">
                 <th scope="row">
                   <div class="media align-items-center">
                     <div class="media-body">
-                      <span class="mb-0 text-sm">Report #3</span>
+                      <span class="mb-0 text-sm">{{data.group_name}}</span>
                     </div>
                   </div>
                 </th>
                 <td>
-
+                  {{data.section}}
                 </td>
                 <td>
-
+                  {{data.createdAt}}
                 </td>
                 <td class="text-right">
                   <!-- <div ngbDropdown  placement="top-right">

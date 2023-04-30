@@ -1,24 +1,66 @@
-.search{
+.search {
     width: 30%;
 }
-.btn{
+
+.btn {
     width: 40%;
 }
-.modal{
+
+.modal {
     background-color: rgba(0, 0, 0, 0.5);
-  }
-.card-body{
+}
+
+.card-body {
     width: 350px;
 }
-.datepicker{
-    
+
+.datepicker {
+
     width: 200px;
 }
+
 // tr {
 //     background-color: #fff;
 //   }
-  
+
 //   /* Set the background color of the row to light gray when the mouse hovers over it */
 //   tr:hover {
 //     background-color: #eee;
 //   }
+label {
+    margin-left: 20px;
+}
+
+#datepicker {
+    width: 180px;
+    margin: 0 20px 20px 20px;
+}
+
+#datepicker>span:hover {
+    cursor: pointer;
+}
+
+label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type="date"] {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: #555;
+    padding: 10px;
+    width: 200px;
+}
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: #66afe9;
+    box-shadow: 0 0 5px #66afe9;
+}
