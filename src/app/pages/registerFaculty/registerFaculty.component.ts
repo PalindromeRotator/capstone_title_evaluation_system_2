@@ -28,35 +28,60 @@ export class RegisterComponentFaculty {
       name: this.userData.name,
       section: this.userData.section,
       password: this.userData.password,
-      confirmPassword: this.userData.password,
+      confirmPassword: this.userData.confirmPassword,
       user_type: this.userData.user_type,
       user_define_id: this.userData.user_define_id,
       is_verified: false,
       expertise: this.userData.expertise,
     };
     if (data.email !== '' && data.password !== '' && data.confirmPassword !== '' && data.name !== '') {
-      this.usersService.create(data)
-        .subscribe(
-          response => {
-            this.router.navigate(['']);
-          },
-          error => {
-            console.log(error)
-            if (error.status == 404)
-              Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Username or Password is Incorrect.'
-              })
-          });
-    }
-    else {
+      if (this.userData.password === this.userData.confirmPassword) {
+        const alphanumericRegex = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
+        if (alphanumericRegex.test(this.userData.password)) {
+          this.usersService.create(data)
+            .subscribe(
+              response => {
+                this.router.navigate(['']);
+              },
+              error => {
+                if (error.status == 500) {
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `Name is already exist.`
+                  })
+                }
+                if (error.status == 404)
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Username or Password is Incorrect.'
+                  })
+              });
+        }
+        else {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `Invalid type of password. Password must contain alpha numeric characters.`
+          })
+        }
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: `Password and confirm password is not matched.`
+        })
+      }
+    } else {
       Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: `Forms cannot be empty ${data.email}`
+        text: `Fields are epmty.`
       })
     }
+
+
 
   }
 

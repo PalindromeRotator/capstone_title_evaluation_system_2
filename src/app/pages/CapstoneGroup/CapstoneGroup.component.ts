@@ -210,7 +210,7 @@ export class CapstoneGroup implements OnInit {
       if (result.isConfirmed) {
         var arr = this.panelsArray
         var flag = false
-        if (arr.length === 3 && (this.adviser.uid !== 0 || this.adviser)) {
+        if (arr.length === 5 && (this.adviser.uid !== 0 || this.adviser)) {
           Swal.fire({
             icon: 'error',
             text: 'Panel is full.'
@@ -281,23 +281,32 @@ export class CapstoneGroup implements OnInit {
   saveChanges(): void {
     var temp: Entry[] = []
     temp = JSON.parse(this.titleObject2.titles!)
-    const storageRef = ref(storage, `${localStorage.getItem('name')}/${this.titleData.title}`);
-    uploadBytes(storageRef, this.file2).then((snapshot) => {
-      getDownloadURL(storageRef).then((url) => {
-        this.titleData.file = url
-        temp.push(this.titleData)
-
-        this.titles.update(this.titleObject2.id, { titles: JSON.stringify(temp) }).subscribe(response => { })
-        Swal.fire({
-          icon: 'success',
-          text: 'Title Added'
-        }).then(() => {
-          this.router.navigate(['/capstonegrouplist'])
-        })
-        // saveAs(url)
-        // console.log(url)
+    if (temp.length >= 3) {
+      Swal.fire({
+        icon: 'error',
+        text: 'MAximum reached'
       })
-    })
+    }
+    else {
+      const storageRef = ref(storage, `${localStorage.getItem('name')}/${this.titleData.title}`);
+      uploadBytes(storageRef, this.file2).then((snapshot) => {
+        getDownloadURL(storageRef).then((url) => {
+          this.titleData.file = url
+          temp.push(this.titleData)
+
+          this.titles.update(this.titleObject2.id, { titles: JSON.stringify(temp) }).subscribe(response => { })
+          Swal.fire({
+            icon: 'success',
+            text: 'Title Added'
+          }).then(() => {
+            this.router.navigate(['/capstonegrouplist'])
+          })
+          // saveAs(url)
+          // console.log(url)
+        })
+      })
+    }
+
   }
 
   checkValue(event: any) {

@@ -57,6 +57,16 @@ export class UserProfileComponent implements OnInit {
           localStorage.setItem('name', this.userData.name!);
           localStorage.setItem('email', this.userData.email!);
         })
+      },
+      error => {
+        console.log(error)
+        if (error.status == 500) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: `Name is already exist.`
+          })
+        }
       }
     )
   }
