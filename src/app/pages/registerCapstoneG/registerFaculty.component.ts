@@ -37,9 +37,8 @@ export class RegisterComponentCapstoneG {
     };
     if (data.email !== '' && data.password !== '' && data.confirmPassword !== '' && data.name !== '') {
       if (this.userData.password === this.userData.confirmPassword) {
-        const alphaRegex = /^[a-zA-Z]+$/;
-        const numericRegex = /^[0-9]+$/;
-        if (alphaRegex.test(this.userData.password) && numericRegex.test(this.userData.password)) {
+        const alphanumericRegex = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
+        if (alphanumericRegex.test(this.userData.password)) {
           this.usersService.create(data)
             .subscribe(
               response => {
@@ -65,7 +64,7 @@ export class RegisterComponentCapstoneG {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: `Forms cannot be empty ${data.email}`
+            text: `Invalid type of password. Password must contain alpha numeric characters.`
           })
         }
       } else {
