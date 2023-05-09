@@ -35,44 +35,54 @@ export class RegisterComponentFaculty {
       expertise: this.userData.expertise,
     };
     if (data.email !== '' && data.password !== '' && data.confirmPassword !== '' && data.name !== '') {
-      if (this.userData.password === this.userData.confirmPassword) {
-        const alphanumericRegex = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
-        if (alphanumericRegex.test(this.userData.password)) {
-          this.usersService.create(data)
-            .subscribe(
-              response => {
-                this.router.navigate(['']);
-              },
-              error => {
-                if (error.status == 500) {
-                  Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: `Name is already exist.`
-                  })
-                }
-                if (error.status == 404)
-                  Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Username or Password is Incorrect.'
-                  })
-              });
-        }
-        else {
+      if (this.validateEmail(data.email)) {
+        if (this.userData.password === this.userData.confirmPassword) {
+          const alphanumericRegex = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
+          if (alphanumericRegex.test(this.userData.password)) {
+            this.usersService.create(data)
+              .subscribe(
+                response => {
+                  this.router.navigate(['']);
+                },
+                error => {
+                  if (error.status == 500) {
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: `Name is already exist.`
+                    })
+                  }
+                  if (error.status == 404)
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: 'Username or Password is Incorrect.'
+                    })
+                });
+          }
+          else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: `Invalid type of password. Password must contain alpha numeric characters.`
+            })
+          }
+        } else {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: `Invalid type of password. Password must contain alpha numeric characters.`
+            text: `Password and confirm password is not matched.`
           })
         }
-      } else {
+      }
+      else {
         Swal.fire({
           icon: 'error',
-          title: 'Oops...',
-          text: `Password and confirm password is not matched.`
+          text: `Invalid email format. You must use gmail.com domain only.`
         })
       }
+
+
     } else {
       Swal.fire({
         icon: 'error',
@@ -85,4 +95,20 @@ export class RegisterComponentFaculty {
 
   }
 
+  validateEmail(inputText: string): boolean {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const domain = ["@gmail.com", "@yahoo.com"];
+
+    if (!emailRegex.test(inputText)) {
+      return false;
+    }
+
+    const emailDomain = inputText.substring(inputText.lastIndexOf("@"));
+
+    if (!domain.includes(emailDomain)) {
+      return false;
+    }
+
+    return true;
+  }
 }

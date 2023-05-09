@@ -11,7 +11,6 @@ export const ROUTES: RouteInfo[] = [
   { path: '/user-profile', title: 'Profile', icon: 'ni-single-02 text-yellow', class: '' },
   { path: '/capstonegrouplist', title: 'Capstone Titles', icon: 'ni-books text-pink', class: '' },
   // { path: '/panelsandadviser', title: 'Panels and Adviser', icon: 'ni-circle-08 text-pink', class: '' },
-  { path: '/reportgeneration', title: 'Report Generation', icon: 'ni-single-copy-04 text-pink', class: '' },
   { path: '/contentmanagement', title: 'Content Management', icon: 'ni-ui-04 text-pink', class: '' },
 
 ];
@@ -19,14 +18,12 @@ export const ROUTES: RouteInfo[] = [
 export const ROUTES_FACULTY: RouteInfo[] = [
   { path: '/user-profile', title: 'Profile', icon: 'ni-single-02 text-yellow', class: '' },
   { path: '/capstonegrouplist', title: 'Capstone Title', icon: 'ni-circle-08 text-pink', class: '' },
-  { path: '/reportgeneration', title: 'Report Generation', icon: 'ni-circle-08 text-pink', class: '' },
   { path: '/contentmanagement', title: 'Content Management', icon: 'ni-circle-08 text-pink', class: '' },
 
 ];
 export const ROUTES_COORDINATOR: RouteInfo[] = [
   { path: '/user-profile', title: 'Profile', icon: 'ni-single-02 text-yellow', class: '' },
   { path: '/capstonegrouplist', title: 'Capstone Group List', icon: 'ni-circle-08 text-pink', class: '' },
-  { path: '/reportgeneration', title: 'Report Generation', icon: 'ni-single-copy-04 text-pink', class: '' },
   { path: '/contentmanagement', title: 'Content Management', icon: 'ni-ui-04 text-pink', class: '' },
 
 ];

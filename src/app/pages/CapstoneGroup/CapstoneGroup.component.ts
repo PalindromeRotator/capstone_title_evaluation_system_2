@@ -208,7 +208,9 @@ export class CapstoneGroup implements OnInit {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
+        let limitCount = 0
         var arr = this.panelsArray
+        var obj = this.adviser
         var flag = false
         if (arr.length === 5 && (this.adviser.uid !== 0 || this.adviser)) {
           Swal.fire({
@@ -228,13 +230,44 @@ export class CapstoneGroup implements OnInit {
               text: 'Panel already in the list'
             })
           } else {
-            this.panelsArray.push({ uid: datas.id, name: datas.name! })
-            this.titles.update(this.titleObject.id, { panels: JSON.stringify(this.panelsArray) }).subscribe(response => { })
+
+            if (obj.uid === datas.id) {
+              Swal.fire({
+                icon: 'error',
+                text: 'This faculty is already in adviser in this group.'
+              })
+            }
+            else {
+              this.titles.getAll().subscribe(
+                response => {
+                  for (let responseData of response) {
+                    let panelTemp = JSON.parse(responseData.panels)
+                    for (let panelData of panelTemp) {
+                      if (panelData.uid == datas.id) {
+                        limitCount++
+                      }
+                    }
+                  }
+                  if (limitCount == 5) {
+                    Swal.fire({
+                      icon: 'error',
+                      text: 'This faculty is already panel to 5 groups.'
+                    })
+                  } else {
+                    this.panelsArray.push({ uid: datas.id, name: datas.name! })
+                    this.titles.update(this.titleObject.id, { panels: JSON.stringify(this.panelsArray) }).subscribe(response => { })
+                  }
+                }
+              )
+
+            }
           }
           console.log(datas)
         }
 
       } else if (result.isDenied) {
+        let limitCount = 0
+        var arr = this.panelsArray
         var obj = this.adviser
         var flag = false
         if (this.adviser.uid) {
@@ -244,8 +277,40 @@ export class CapstoneGroup implements OnInit {
           })
         }
         else {
-          this.adviser = { uid: datas.id, name: datas.name! }
-          this.titles.update(this.titleObject.id, { adviser: JSON.stringify(this.adviser) }).subscribe(response => { })
+          for (let data of arr) {
+            if (data.uid === datas.id) {
+              flag = true
+            }
+          }
+          if (flag) {
+            Swal.fire({
+              icon: 'error',
+              text: 'This faculty is already in the panel list'
+            })
+          } else {
+            this.titles.getAll().subscribe(
+              response => {
+                for (let responseData of response) {
+                  let panelTemp = JSON.parse(responseData.adviser)
+                  if (panelTemp.uid == datas.id) {
+                    limitCount++
+                  }
+                }
+                if (limitCount == 5) {
+                  Swal.fire({
+                    icon: 'error',
+                    text: 'This faculty is already adviser to 5 groups.'
+                  })
+                } else {
+                  this.adviser = { uid: datas.id, name: datas.name! }
+                  this.titles.update(this.titleObject.id, { adviser: JSON.stringify(this.adviser) }).subscribe(response => { })
+                }
+              }
+            )
+            this.adviser = { uid: datas.id, name: datas.name! }
+            this.titles.update(this.titleObject.id, { adviser: JSON.stringify(this.adviser) }).subscribe(response => { })
+          }
+
 
         }
       }
@@ -263,48 +328,67 @@ export class CapstoneGroup implements OnInit {
 
 
   onFileSelected2(event: any): void {
-    const inputElement = event.target as HTMLInputElement;
-    if (inputElement.files && inputElement.files.length > 0) {
-      if (!inputElement.files[0]) {
-        return;
-      }
+    if (event.target.files[0].type === 'application/pdf') {
+      const inputElement = event.target as HTMLInputElement;
+      if (inputElement.files && inputElement.files.length > 0) {
+        if (!inputElement.files[0]) {
+          return;
+        }
 
-      const fileReader = new FileReader();
-      fileReader.onload = () => {
-        const blob = new Blob([fileReader.result as ArrayBuffer], { type: event.target.files[0].type });
-        this.file2 = blob
-      };
-      fileReader.readAsArrayBuffer(event.target.files[0]);
+        const fileReader = new FileReader();
+        fileReader.onload = () => {
+          const blob = new Blob([fileReader.result as ArrayBuffer], { type: event.target.files[0].type });
+          this.file2 = blob
+        };
+        fileReader.readAsArrayBuffer(event.target.files[0]);
+      }
+    } else {
+      Swal.fire({
+        icon: 'error',
+        text: `Invalid file format`
+      })
     }
+
   }
 
   saveChanges(): void {
     var temp: Entry[] = []
     temp = JSON.parse(this.titleObject2.titles!)
+    if (temp == null) {
+      temp = []
+    }
     if (temp.length >= 3) {
       Swal.fire({
         icon: 'error',
-        text: 'MAximum reached'
+        text: 'Maximum reached'
       })
     }
     else {
-      const storageRef = ref(storage, `${localStorage.getItem('name')}/${this.titleData.title}`);
-      uploadBytes(storageRef, this.file2).then((snapshot) => {
-        getDownloadURL(storageRef).then((url) => {
-          this.titleData.file = url
-          temp.push(this.titleData)
-
-          this.titles.update(this.titleObject2.id, { titles: JSON.stringify(temp) }).subscribe(response => { })
-          Swal.fire({
-            icon: 'success',
-            text: 'Title Added'
-          }).then(() => {
-            this.router.navigate(['/capstonegrouplist'])
-          })
-          // saveAs(url)
-          // console.log(url)
+      if (this.titleData.title === '' || this.titleData.file === '') {
+        Swal.fire({
+          icon: 'error',
+          text: 'Cannot add empty fields.'
         })
-      })
+      } else {
+        const storageRef = ref(storage, `${localStorage.getItem('name')}/${this.titleData.title}`);
+        uploadBytes(storageRef, this.file2).then((snapshot) => {
+          getDownloadURL(storageRef).then((url) => {
+            this.titleData.file = url
+            temp.push(this.titleData)
+
+            this.titles.update(this.titleObject2.id, { titles: JSON.stringify(temp) }).subscribe(response => { })
+            Swal.fire({
+              icon: 'success',
+              text: 'Title Added'
+            }).then(() => {
+              this.router.navigate(['/capstonegrouplist'])
+            })
+            // saveAs(url)
+            // console.log(url)
+          })
+        })
+      }
+
     }
 
   }

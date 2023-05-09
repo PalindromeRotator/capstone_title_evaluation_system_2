@@ -80,7 +80,13 @@ export class tables {
                 icon: 'success',
                 text: 'Capstone group Accepted'
               }).then(() => {
-                window.location.reload()
+                this.usersService.getAll().subscribe(
+                  response => {
+                    console.log(response)
+                    this.users = response
+                    this.sectionArray.push(this.getAllSection())
+                  }
+                )
               })
             }
           )
