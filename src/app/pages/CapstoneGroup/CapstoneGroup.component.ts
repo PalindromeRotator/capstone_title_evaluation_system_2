@@ -242,16 +242,21 @@ export class CapstoneGroup implements OnInit {
                 response => {
                   for (let responseData of response) {
                     let panelTemp = JSON.parse(responseData.panels)
+                    let adviserTemp = JSON.parse(responseData.adviser)
                     for (let panelData of panelTemp) {
                       if (panelData.uid == datas.id) {
                         limitCount++
                       }
                     }
+                    if (adviserTemp.uid == datas.id) {
+                      limitCount++
+                    }
+
                   }
-                  if (limitCount == 5) {
+                  if (limitCount >= 5) {
                     Swal.fire({
                       icon: 'error',
-                      text: 'This faculty is already panel to 5 groups.'
+                      text: 'This faculty is already panel or adviser to 5 groups.'
                     })
                   } else {
                     this.panelsArray.push({ uid: datas.id, name: datas.name! })
@@ -291,15 +296,21 @@ export class CapstoneGroup implements OnInit {
             this.titles.getAll().subscribe(
               response => {
                 for (let responseData of response) {
-                  let panelTemp = JSON.parse(responseData.adviser)
-                  if (panelTemp.uid == datas.id) {
+                  let panelTemp = JSON.parse(responseData.panels)
+                  let adviserTemp = JSON.parse(responseData.adviser)
+                  for (let panelData of panelTemp) {
+                    if (panelData.uid == datas.id) {
+                      limitCount++
+                    }
+                  }
+                  if (adviserTemp.uid == datas.id) {
                     limitCount++
                   }
                 }
-                if (limitCount == 5) {
+                if (limitCount >= 5) {
                   Swal.fire({
                     icon: 'error',
-                    text: 'This faculty is already adviser to 5 groups.'
+                    text: 'This faculty is already panel or adviser to 5 groups.'
                   })
                 } else {
                   this.adviser = { uid: datas.id, name: datas.name! }
@@ -307,8 +318,8 @@ export class CapstoneGroup implements OnInit {
                 }
               }
             )
-            this.adviser = { uid: datas.id, name: datas.name! }
-            this.titles.update(this.titleObject.id, { adviser: JSON.stringify(this.adviser) }).subscribe(response => { })
+            // this.adviser = { uid: datas.id, name: datas.name! }
+            // this.titles.update(this.titleObject.id, { adviser: JSON.stringify(this.adviser) }).subscribe(response => { })
           }
 
 
@@ -339,6 +350,7 @@ export class CapstoneGroup implements OnInit {
         fileReader.onload = () => {
           const blob = new Blob([fileReader.result as ArrayBuffer], { type: event.target.files[0].type });
           this.file2 = blob
+          this.titleData.file = inputElement.files[0].name
         };
         fileReader.readAsArrayBuffer(event.target.files[0]);
       }
@@ -365,6 +377,7 @@ export class CapstoneGroup implements OnInit {
     }
     else {
       if (this.titleData.title === '' || this.titleData.file === '') {
+        console.log(this.titleData)
         Swal.fire({
           icon: 'error',
           text: 'Cannot add empty fields.'
